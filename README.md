@@ -25,55 +25,75 @@
 ![Stars](https://img.shields.io/github/stars/TelemetryHarbor/harbor-sdk-python.svg?style=social)
 ![Forks](https://img.shields.io/github/forks/TelemetryHarbor/harbor-sdk-python.svg?style=social)
 
+A modern, production-ready SDK for sending telemetry data to the **Telemetry Harbor** service from any Python application.
 
-A robust, production-ready Python SDK for interacting with Telemetry Harbor ingestion endpoints.
+This SDK simplifies data sending by handling HTTP communication, JSON serialization, and robust error handling with automatic retries.
+
+For full details and advanced usage, please see our official documentation at [docs.telemetryharbor.com](https://docs.telemetryharbor.com).
+
+***
 
 ## Features
 
-- ✅ Easy-to-use client for sending telemetry data to Harbor.
-- 🧠 Flexible, validation-powered data models using [Pydantic](https://docs.pydantic.dev/).
-- 🔁 Automatic retries with exponential backoff for network reliability.
-- 📦 Support for sending both single readings and batches.
+* ✅ **Pydantic Models** for strong validation and ease of use.
+* 🔁 **Automatic Retries** with exponential backoff for network resilience.
+* 📦 **Batch Support** for efficient multi-reading uploads.
+* ⚙️ **Simple API** with intuitive methods like `send` and `send_batch`.
+* 🌐 **Universal** — works in any Python 3.7+ environment.
+
+***
 
 ## Installation
 
-```
+```bash
 pip install telemetry-harbor-sdk
-```
+````
 
-## Usage
+---
+
+## Quickstart Guide
+
+Here is a basic example of how to use the SDK.
 
 ```python
 from telemetry_harbor_sdk import HarborClient, GeneralReading
 
+# 1. Initialize the client
 client = HarborClient(
     endpoint="https://api.telemetry-harbor.com/v1/ingest/{harbor_id}",
     api_key="your_secret_api_key"
 )
 
-# Send a single reading
+# 2. Create a reading
 reading = GeneralReading(
     ship_id="MV-Explorer",
     cargo_id="C-1138",
     value=42.5
 )
-client.send(reading)
 
-# Send a batch of readings
+# 3. Send the reading
+response = client.send(reading)
+print("Successfully sent data!", response)
+
+# --- Or send a batch ---
 batch = [
     GeneralReading(ship_id="MV-Explorer", cargo_id="C-1138", value=42.5),
-    # Add more readings as needed
+    GeneralReading(ship_id="MV-Explorer", cargo_id="temperature", value=21.7),
 ]
-client.send_batch(batch)
+batch_response = client.send_batch(batch)
+print("Successfully sent batch!", batch_response)
 ```
+
+---
 
 ## GPS and Cargo Data Rules
 
-When sending GPS data:
+When sending GPS coordinates, send `latitude` and `longitude` as separate readings with:
 
-- `latitude` and `longitude` are sent as **separate readings**, each using a distinct `cargo_id` (e.g., `"latitude"`, `"longitude"`).
-- These readings must share the **same `ship_id` and `timestamp`** to be grouped correctly on the backend.
-- This allows location data to be joined in time-series queries for mapping or tracking.
+* The same `ship_id` and `timestamp`.
+* Distinct `cargo_id`s `"latitude"` and `"longitude"`.
+
+This allows proper grouping in the backend for time-series queries.
 
 **Example batch:**
 
@@ -94,9 +114,9 @@ When sending GPS data:
 ]
 ```
 
-> ✅ This structure supports SQL-based reconstruction of full GPS coordinates using `cargo_id` filters and grouping by `ship_id` and `timestamp`.
+> ✅ This enables SQL queries to reconstruct full GPS points by grouping on `ship_id` and `timestamp`.
 
-**Query Example (PostgreSQL/TimescaleDB):**
+**Query example (PostgreSQL/TimescaleDB):**
 
 ```sql
 SELECT
@@ -109,14 +129,27 @@ WHERE $__timeFilter(time)
   AND ship_id IN (${ship_id:sqlstring})
   AND cargo_id IN ('latitude', 'longitude')
 GROUP BY time, ship_id
-HAVING 
-    COUNT(DISTINCT CASE WHEN cargo_id = 'latitude' THEN value END) > 0
-    AND COUNT(DISTINCT CASE WHEN cargo_id = 'longitude' THEN value END) > 0
 ORDER BY time;
 ```
 
-## 📚 Full Documentation
+---
 
-For full API reference, model structure, and advanced examples, visit:
+## API Reference
 
-👉 [**docs.telemetryharbor.com**](https://docs.telemetryharbor.com)
+### `HarborClient(endpoint, api_key, max_retries=5, initial_backoff=1.0)`
+
+Create a new client instance.
+
+* `endpoint` (str): Telemetry Harbor ingestion URL.
+* `api_key` (str): Your API key.
+* `max_retries` (int, optional): Retry attempts on failure (default 5).
+* `initial_backoff` (float, optional): Initial backoff in seconds (default 1.0).
+
+### `send(reading: GeneralReading)`
+
+Send a single telemetry reading.
+
+### `send_batch(readings: List[GeneralReading])`
+
+Send multiple readings in a batch.
+
