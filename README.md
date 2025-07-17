@@ -56,7 +56,7 @@ pip install telemetry-harbor-sdk
 Here is a basic example of how to use the SDK.
 
 ```python
-from telemetry_harbor_sdk import HarborClient, GeneralReading
+from telemetryharborsdk import HarborClient, GeneralReading
 
 # 1. Initialize the client
 client = HarborClient(
