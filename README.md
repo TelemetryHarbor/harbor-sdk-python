@@ -12,6 +12,7 @@
 ![Status](https://img.shields.io/pypi/status/telemetry-harbor-sdk.svg)
 
 <!-- GitHub -->
+![Build](https://github.com/TelemetryHarbor/harbor-sdk-python/actions/workflows/publish-to-pypi.yml/badge.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/TelemetryHarbor/harbor-sdk-python.svg)
 ![Issues](https://img.shields.io/github/issues/TelemetryHarbor/harbor-sdk-python.svg)
 ![Pull Requests](https://img.shields.io/github/issues-pr/TelemetryHarbor/harbor-sdk-python.svg)
