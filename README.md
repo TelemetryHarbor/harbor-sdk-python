@@ -18,7 +18,7 @@ pip install telemetry-harbor-sdk
 ## Usage
 
 ```python
-from harbor_sdk import HarborClient, GeneralReading
+from telemetry_harbor_sdk import HarborClient, GeneralReading
 
 client = HarborClient(
     endpoint="https://api.telemetry-harbor.com/v1/ingest/{harbor_id}",
