@@ -1,8 +1,8 @@
 # test_client.py
 import pytest
 import requests
-from telemetry_harbor_sdk import HarborClient
-from telemetry_harbor_sdk.models import GeneralReading
+from telemetryharborsdk import HarborClient
+from telemetryharborsdk.models import GeneralReading
 
 API_ENDPOINT = "ENDPOINT"
 API_KEY = "API-KEY"
