@@ -46,7 +46,7 @@ For full details and advanced usage, please see our official documentation at [d
 ## Installation
 
 ```bash
-pip install telemetry-harbor-sdk
+pip install telemetryharborsdk
 ````
 
 ---
