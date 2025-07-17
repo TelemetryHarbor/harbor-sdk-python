@@ -1,5 +1,30 @@
 # Telemetry Harbor Python SDK
 
+<!-- Telemetry Harbor SDK Badges -->
+
+<!-- PyPI -->
+![PyPI](https://img.shields.io/pypi/v/telemetry-harbor-sdk.svg)
+![Python Versions](https://img.shields.io/pypi/pyversions/telemetry-harbor-sdk.svg)
+![Downloads](https://img.shields.io/pypi/dm/telemetry-harbor-sdk.svg)
+![License](https://img.shields.io/pypi/l/telemetry-harbor-sdk.svg)
+![Wheel](https://img.shields.io/pypi/wheel/telemetry-harbor-sdk.svg)
+![Format](https://img.shields.io/pypi/format/telemetry-harbor-sdk.svg)
+![Status](https://img.shields.io/pypi/status/telemetry-harbor-sdk.svg)
+
+<!-- GitHub -->
+![Last Commit](https://img.shields.io/github/last-commit/TelemetryHarbor/harbor-sdk-python.svg)
+![Issues](https://img.shields.io/github/issues/TelemetryHarbor/harbor-sdk-python.svg)
+![Pull Requests](https://img.shields.io/github/issues-pr/TelemetryHarbor/harbor-sdk-python.svg)
+![Repo Size](https://img.shields.io/github/repo-size/TelemetryHarbor/harbor-sdk-python.svg)
+![Contributors](https://img.shields.io/github/contributors/TelemetryHarbor/harbor-sdk-python.svg)
+
+<!-- Fun / Community -->
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![Stars](https://img.shields.io/github/stars/TelemetryHarbor/harbor-sdk-python.svg?style=social)
+![Forks](https://img.shields.io/github/forks/TelemetryHarbor/harbor-sdk-python.svg?style=social)
+
+
 A robust, production-ready Python SDK for interacting with Telemetry Harbor ingestion endpoints.
 
 ## Features
