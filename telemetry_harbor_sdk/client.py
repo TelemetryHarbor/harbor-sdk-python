@@ -4,7 +4,7 @@ import time
 import logging
 from typing import List, Optional
 
-from telemetry_harbor_sdk.models import HarborPayload # Import the Pydantic models
+from .models import HarborPayload # Import the Pydantic models
 
 # Configure logging (same as before)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
