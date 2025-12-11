@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 # The name of your package on PyPI (must be unique)
 name = "telemetryharborsdk"
-version = "0.1.8"
+version = "0.1.9"
 authors = [
   { name="Telemetry Harbor", email="support@telemetryharbor.com" },
 ]
