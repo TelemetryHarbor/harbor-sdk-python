@@ -31,8 +31,7 @@ classifiers = [
 
 # This is where you list your package's dependencies
 dependencies = [
-    "requests",
-    "pydantic",
+    "harborscalesdk>=0.2.0", 
 ]
 
 [project.urls]
