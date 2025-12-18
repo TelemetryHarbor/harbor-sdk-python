@@ -6,12 +6,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 # The name of your package on PyPI (must be unique)
-name = "telemetryharborsdk"
+name = "harborscalesdk"
 version = "0.1.9"
 authors = [
-  { name="Telemetry Harbor", email="support@telemetryharbor.com" },
+  { name="Harbor Scale", email="support@harborscale.com" },
 ]
-description = "A Python SDK for interacting with Telemetry Harbor ingestion endpoints."
+description = "A Python SDK for interacting with Harbor Scale ingestion endpoints."
 
 # This points to your README file for the long description on PyPI
 readme = "README.md"
@@ -36,5 +36,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TelemetryHarbor/harbor-sdk-python"
-"Bug Tracker" = "https://github.com/TelemetryHarbor/harbor-sdk-python/issues"
+Homepage = "https://github.com/harborscale/harbor-sdk-python"
+"Bug Tracker" = "https://github.com/harborscale/harbor-sdk-python/issues"

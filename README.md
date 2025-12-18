@@ -1,49 +1,49 @@
 
-# Telemetry Harbor Python SDK
+# Harbor Scale Python SDK
 
-![PyPI](https://img.shields.io/pypi/v/telemetryharborsdk.svg)
-![Python Versions](https://img.shields.io/pypi/pyversions/telemetryharborsdk.svg)
-![Downloads](https://img.shields.io/pypi/dm/telemetryharborsdk.svg)
-![License](https://img.shields.io/pypi/l/telemetryharborsdk.svg)
+![PyPI](https://img.shields.io/pypi/v/harborscalesdk.svg)
+![Python Versions](https://img.shields.io/pypi/pyversions/harborscalesdk.svg)
+![Downloads](https://img.shields.io/pypi/dm/harborscalesdk.svg)
+![License](https://img.shields.io/pypi/l/harborscalesdk.svg)
 
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
-![Stars](https://img.shields.io/github/stars/TelemetryHarbor/harbor-sdk-python.svg?style=social)
+![Stars](https://img.shields.io/github/stars/harborscale/harbor-sdk-python.svg?style=social)
 
 ## The Easiest Way to Visualize Python Data 🚀
 
 **Stop managing InfluxDB and Grafana containers.**
 
-The **Telemetry Harbor SDK** lets you send telemetry from any Python application (Raspberry Pi, Servers, Desktop scripts) to a fully managed Grafana dashboard in **1 line of code**.
+The **Harbor Scale SDK** lets you send telemetry from any Python application (Raspberry Pi, Servers, Desktop scripts) to a fully managed Grafana dashboard in **1 line of code**.
 
 * **⚡ Instant Visualization:** Data appears on your hosted Grafana dashboard in milliseconds.
 * **💾 Infinite Storage:** We handle the time-series database for you.
 * **🔌 Zero Config:** No Docker, no ports, no firewall rules. Just `pip install`.
 
-[**👉 Get your Free API Key at TelemetryHarbor.com**](https://www.telemetryharbor.com)
+[**👉 Get your Free API Key at harborscale.com**](https://www.harborscale.com)
 
 ---
 
 ## Installation
 
 ```bash
-pip install telemetryharborsdk
+pip install harborscalesdk
 ````
 
 -----
 
 ## 30-Second Quickstart
 
-1.  **Get a Key:** Sign up at [TelemetryHarbor.com](https://www.telemetryharbor.com) (Free Tier includes 3M data points).
+1.  **Get a Key:** Sign up at [harborscale.com](https://www.harborscale.com) (Free Tier includes 3M data points).
 2.  **Run this script:**
 
 <!-- end list -->
 
 ```python
-from telemetryharborsdk import HarborClient, GeneralReading
+from harborscalesdk import HarborClient, GeneralReading
 
 # 1. Initialize (Replace with your actual ID and Key)
 client = HarborClient(
-    endpoint="https://telemetryharbor.com/api/v2/ingest/YOUR_HARBOR_ID",
+    endpoint="https://harborscale.com/api/v2/ingest/YOUR_HARBOR_ID",
     api_key="sk_live_..."
 )
 
@@ -77,7 +77,7 @@ client.send_batch(batch)
 
 ### Logging GPS Data
 
-Telemetry Harbor automatically groups GPS data for map visualizations. Send `latitude` and `longitude` as separate metrics with the same timestamp.
+Harbor Scale automatically groups GPS data for map visualizations. Send `latitude` and `longitude` as separate metrics with the same timestamp.
 
 ```python
 # The SDK handles the timestamps automatically if you don't provide one
@@ -102,9 +102,9 @@ client.send_batch([
 
 ## Need Help?
 
-  * 📚 **Documentation:** [docs.telemetryharbor.com](https://docs.telemetryharbor.com)
-  * 💬 **Support:** [support@telemetryharbor.com](mailto:support@telemetryharbor.com)
-  * 🐛 **Issues:** [GitHub Issues](https://github.com/TelemetryHarbor/harbor-sdk-python/issues)
+  * 📚 **Documentation:** [docs.harborscale.com](https://docs.harborscale.com)
+  * 💬 **Support:** [support@harborscale.com](mailto:support@harborscale.com)
+  * 🐛 **Issues:** [GitHub Issues](https://github.com/harborscale/harbor-sdk-python/issues)
 
 <!-- end list -->
 

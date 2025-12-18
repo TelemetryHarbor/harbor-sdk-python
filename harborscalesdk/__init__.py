@@ -1,4 +1,4 @@
-# telemetryharborsdk/__init__.py
+# harborscalesdk/__init__.py
 
 # Expose the main client and models at the top level of the package
 from .client import HarborClient

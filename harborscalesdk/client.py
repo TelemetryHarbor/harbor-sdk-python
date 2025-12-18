@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 class HarborClient:
     """
-    Production-ready Python SDK for interacting with Telemetry Harbor.
+    Production-ready Python SDK for interacting with Harbor Scale.
     It is designed to be extensible with Pydantic models.
     """
     def __init__(self, endpoint: str, api_key: str, max_retries: int = 5, initial_backoff: float = 1.0):
